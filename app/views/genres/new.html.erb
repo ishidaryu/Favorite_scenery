@@ -1,0 +1,7 @@
+<div>
+<%= form_with model: @genre, url: genres_new_path do |f| %>
+<%= f.text_field :title %>
+<%= f.text_field :body %>
+<%= f.submit %>
+<% end %>
+</div>
