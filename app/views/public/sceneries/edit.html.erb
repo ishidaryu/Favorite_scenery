@@ -1,0 +1,5 @@
+<%= form_with model: @scenery, url: scenery_path(@scenery) do |f| %>
+<%= f.text_field :name %>
+<%= f.text_area :introduction %>
+<%= f.submit %>
+<% end %>

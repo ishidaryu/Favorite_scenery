@@ -11,6 +11,21 @@ class Public::SceneriesController < ApplicationController
   redirect_to  sceneries_path
   end
 
+  def show
+    @scenery = Scenery.find_by(id: params[:id])
+  end
+
+
+  def edit
+  @scenery = Scenery.find_by(id: params[:id])
+  end
+
+  def update
+  @scenery = Scenery.find_by(id: params[:id])
+  @scenery.update(scenery_params)
+  redirect_to  scenery_path(@scenery)
+  end
+
 private
 
   def scenery_params

@@ -18,7 +18,7 @@ end
 
 
   scope module: :public do
-  resources :sceneries, only: [:index, :create, :edit, :update]
+  resources :sceneries, only: [:index, :create, :show, :edit, :update]
   end
 
 end
