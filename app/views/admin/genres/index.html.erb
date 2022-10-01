@@ -1,0 +1,9 @@
+<%= render 'new', genre:@genre %>
+
+<% @genres.each do |f| %>
+<h5>
+  <%= f.genre_name %>
+  <%= link_to '編集', edit_admin_genre_path(f) %>
+
+</h5>
+<% end %>

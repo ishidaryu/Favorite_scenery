@@ -1,7 +1,7 @@
 <div>
-<%= form_with model: @scenery, url: genres_new_path do |f| %>
-<%= f.text_field :title %>
-<%= f.text_field :body %>
+<%= form_with model: @scenery, url: sceneries_path do |f| %>
+<%= f.text_field :name %>
+<%= f.text_field :introduction %>
 <%= f.submit %>
 <% end %>
 </div>

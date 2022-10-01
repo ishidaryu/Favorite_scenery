@@ -1,0 +1,4 @@
+<%= form_with model: @genre, url: admin_genre_path(@genre) do |f| %>
+<%= f.text_field :genre_name %>
+<%= f.submit %>
+<% end %>
