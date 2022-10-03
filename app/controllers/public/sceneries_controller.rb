@@ -7,8 +7,9 @@ class Public::SceneriesController < ApplicationController
 
   def create
   @scenery = Scenery.new(scenery_params)
+  @scenery.user_id = current_user.id
   @scenery.save
-  redirect_to  sceneries_path
+  redirect_to sceneries_path
   end
 
   def show
@@ -29,6 +30,6 @@ class Public::SceneriesController < ApplicationController
 private
 
   def scenery_params
-    params.require(:scenery).permit(:name, :introduction)
+    params.require(:scenery).permit(:name, :introduction, :scenery_image)
   end
 end

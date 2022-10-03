@@ -1,6 +1,10 @@
 
 <h5>
+<%= image_tag @scenery.get_scenrery_image(250,250) %>
+  タイトル
   <%= @scenery.name %>
+  説明
   <%= @scenery.introduction %>
 </h5>
  <%= link_to '編集', edit_scenery_path(@scenery) %>
+ <%= link_to 'マイページへ', user_path(current_user.id) %>

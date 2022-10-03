@@ -1,11 +1,14 @@
 <div>
 <%= form_with model: @scenery, url: sceneries_path do |f| %>
+<%= f.file_field :scenery_image, accept: "image/*" %>
 <%= f.text_field :name %>
 <%= f.text_area :introduction %>
 <%= f.submit %>
 <% end %>
 </div>
+
 <% @sceneries.each do |f| %>
+<%= image_tag f.get_scenrery_image(250,250) %>
 <%= f.name %>
 <%= f.introduction %>
 <%= link_to '詳細', scenery_path(f) %>

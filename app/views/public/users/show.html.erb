@@ -1,0 +1,8 @@
+<% @sceneries.each do |f| %>
+<%= image_tag f.get_scenrery_image(250,250) %>
+<%= f.name %>
+<%= f.introduction %>
+ <%= link_to '詳細へ', scenery_path(f) %>
+<% end %>
+
+<%= @user.email %>

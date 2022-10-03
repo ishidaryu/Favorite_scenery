@@ -18,7 +18,10 @@ end
 
 
   scope module: :public do
+root to :
+  get 'homes/about'
   resources :sceneries, only: [:index, :create, :show, :edit, :update]
+  resources :users, only: [:show, :edit]
   end
 
 end
