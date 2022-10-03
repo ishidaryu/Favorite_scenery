@@ -6,5 +6,9 @@
   説明
   <%= @scenery.introduction %>
 </h5>
+<% if @scenery == current_user %>
  <%= link_to '編集', edit_scenery_path(@scenery) %>
  <%= link_to 'マイページへ', user_path(current_user.id) %>
+<% end %>
+
+ <%= link_to '投稿者', user_path(current_user.id) %>
