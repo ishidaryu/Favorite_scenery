@@ -3,6 +3,7 @@
 <% @genres.each do |f| %>
 <h5>
   <%= f.genre_name %>
+  <%= link_to 'Destroy', admin_genre_path(f), method: :delete, class:"btn btn-sm btn-danger" %>
   <%= link_to '編集', edit_admin_genre_path(f) %>
 
 </h5>

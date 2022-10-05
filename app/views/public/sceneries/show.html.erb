@@ -6,9 +6,12 @@
   説明
   <%= @scenery.introduction %>
 </h5>
-<% if @scenery == current_user %>
+<% if @scenery.user == current_user %>
  <%= link_to '編集', edit_scenery_path(@scenery) %>
- <%= link_to 'マイページへ', user_path(current_user.id) %>
+ <%= link_to 'Destroy', scenery_path(@scenery), method: :delete, "data-confirm" => "本当に消しますか?", class:"btn btn-sm btn-danger" %>
 <% end %>
-
+<% if @scenery.user == current_user %>
+ <%= link_to 'マイページへ', user_path(current_user.id) %>
+<% else %>
  <%= link_to '投稿者', user_path(current_user.id) %>
+ <% end %>

@@ -9,13 +9,18 @@ class Public::SceneriesController < ApplicationController
   @scenery = Scenery.new(scenery_params)
   @scenery.user_id = current_user.id
   @scenery.save
-  redirect_to sceneries_path
+  redirect_to user_path(current_user.id)
   end
 
   def show
     @scenery = Scenery.find_by(id: params[:id])
   end
 
+  def destroy
+    @scenery = Scenery.find_by(id: params[:id])
+    @scenery.destroy
+    redirect_to user_path(current_user.id)
+  end
 
   def edit
   @scenery = Scenery.find_by(id: params[:id])

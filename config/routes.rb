@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
 
   namespace :admin do
-  resources :genres, only: [:index, :create, :edit, :update]
+  resources :genres, only: [:index, :create, :destroy, :edit, :update,]
 end
 
 
@@ -21,7 +21,7 @@ end
   scope module: :public do
   root to: "sceneries#index"
   get 'homes/about'
-  resources :sceneries, only: [:index, :create, :show, :edit, :update]
+  resources :sceneries, only: [:index, :create, :show, :destroy, :edit, :update]
   resources :users, only: [:show, :edit]
   end
 

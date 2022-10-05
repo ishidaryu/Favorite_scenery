@@ -3,7 +3,7 @@ class Public::UsersController < ApplicationController
   before_action :ensure_correct_user, only: [:update, :edit]
 
   def show
-  @user = User.find(params[:id])
+  @user = User.find_by(id: params[:id])
   @sceneries = @user.sceneries
   end
 

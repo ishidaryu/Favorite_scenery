@@ -1,7 +1,7 @@
 class Scenery < ApplicationRecord
   belongs_to :user, optional: true
   has_one_attached :scenery_image
-
+  belongs_to :genre, optional: true
 
 
     def get_scenrery_image(width, height)
