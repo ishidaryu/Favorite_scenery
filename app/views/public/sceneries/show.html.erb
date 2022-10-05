@@ -5,6 +5,8 @@
   <%= @scenery.name %>
   説明
   <%= @scenery.introduction %>
+  ジャンル
+  <%= @scenery.genre.genre_name if @scenery.genre.present? %>
 </h5>
 <% if @scenery.user == current_user %>
  <%= link_to '編集', edit_scenery_path(@scenery) %>
@@ -15,3 +17,6 @@
 <% else %>
  <%= link_to '投稿者', user_path(current_user.id) %>
  <% end %>
+ <td class=<%= "favorite_buttons_" + @scenery.id.to_s %> >
+<%= render "public/favorites/favorite", scenery: @scenery %>
+</td>

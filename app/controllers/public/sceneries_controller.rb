@@ -3,6 +3,7 @@ class Public::SceneriesController < ApplicationController
   def index
   @scenery = Scenery.new
   @sceneries = Scenery.all
+  @scenerys = Scenery.find_by(id: params[:id])
   end
 
   def create
@@ -35,6 +36,6 @@ class Public::SceneriesController < ApplicationController
 private
 
   def scenery_params
-    params.require(:scenery).permit(:name, :introduction, :scenery_image)
+    params.require(:scenery).permit(:name, :introduction, :scenery_image, :genre_id)
   end
 end

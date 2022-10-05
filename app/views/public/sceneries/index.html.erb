@@ -2,15 +2,20 @@
 <%= form_with model: @scenery, url: sceneries_path do |f| %>
 <%= f.file_field :scenery_image, accept: "image/*" %>
 <%= f.text_field :name %>
-<%= f.text_area :introduction %>
- <%= f.collection_select :genre_id, Genre.all, :id, :genre_name, {include_blank: "---"}, class:"w-75" %>
+<%= f.text_area :introduction, class: "form-control introduction" %>
+<%= f.collection_select :genre_id, Genre.all, :id, :genre_name, {include_blank: "---"}, class:"w-75" %>
 <%= f.submit %>
 <% end %>
+
 </div>
 
 <% @sceneries.each do |f| %>
 <%= image_tag f.get_scenrery_image(250,250) %>
 <%= f.name %>
 <%= f.introduction %>
+<%= f.genre.genre_name if f.genre.present? %>
 <%= link_to '詳細', scenery_path(f) %>
+ <span id=<%= "favorite_buttons_" + f.id.to_s %> >
+<%= render "public/favorites/favorite", scenery: f %>
+</span>
 <% end %>

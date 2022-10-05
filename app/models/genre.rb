@@ -1,3 +1,3 @@
 class Genre < ApplicationRecord
- has_many :sceneries, dependent: :destroy
+ has_many :sceneries
 end

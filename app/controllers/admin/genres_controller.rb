@@ -14,7 +14,7 @@ class Admin::GenresController < ApplicationController
   def destroy
     @genre = Genre.find_by(id: params[:id])
     @genre.destroy
-    redirect_to admin_genres_path
+    redirect_to admin_genres_path(@genre)
   end
 
   def edit

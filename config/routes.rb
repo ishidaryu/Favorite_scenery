@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-
-
   devise_for :users, controllers: {
   registrations: "public/registrations",
   sessions: 'public/sessions'
@@ -21,8 +19,14 @@ end
   scope module: :public do
   root to: "sceneries#index"
   get 'homes/about'
-  resources :sceneries, only: [:index, :create, :show, :destroy, :edit, :update]
-  resources :users, only: [:show, :edit]
+  resources :sceneries, only: [:index, :create, :show, :destroy, :edit, :update] do
+    resource :favorites, only: [:create, :destroy]
+  end
+  resources :users, only: [:show, :edit] do
+    member do
+      get :favorites
+    end
+  end
   end
 
 end

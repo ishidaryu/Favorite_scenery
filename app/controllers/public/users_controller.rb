@@ -10,10 +10,17 @@ class Public::UsersController < ApplicationController
   def edit
   end
 
+  def favorites
+    @user = User.find(params[:id])
+    favorites = Favorite.where(user_id: @user.id).pluck(:scenery_id)
+    @favorite_sceneries = Scenery.find(favorites)
+  end
+
   private
 
     def user_params
       params.require(:user)
     end
+
 
 end

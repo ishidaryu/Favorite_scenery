@@ -1,5 +1,6 @@
 <%= form_with model: @scenery, url: scenery_path(@scenery) do |f| %>
 <%= f.text_field :name %>
 <%= f.text_area :introduction %>
+<%= f.collection_select :genre_id, Genre.all, :id, :genre_name, {include_blank: "---"}, class:"w-75" %>
 <%= f.submit %>
 <% end %>
