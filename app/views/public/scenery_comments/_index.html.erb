@@ -1,0 +1,14 @@
+<table>
+  <tbody>
+      <% scenery.scenery_comments.each do |book_comment| %>
+      <tr>
+        <td><%= book_comment.comment %></td>
+        <td>
+          <% if book_comment.user == current_user %>
+            <%= link_to "Destroy", scenery_scenery_comment_path(scenery, book_comment), method: :delete, class: "btn btn-danger pull-right", remote: true %>
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>

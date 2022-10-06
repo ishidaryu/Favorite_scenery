@@ -15,6 +15,8 @@ class Public::SceneriesController < ApplicationController
 
   def show
     @scenery = Scenery.find_by(id: params[:id])
+    @user = @scenery.user
+    @scenery_comment = SceneryComment.new
   end
 
   def destroy

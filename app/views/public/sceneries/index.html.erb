@@ -8,14 +8,5 @@
 <% end %>
 
 </div>
-
-<% @sceneries.each do |f| %>
-<%= image_tag f.get_scenrery_image(250,250) %>
-<%= f.name %>
-<%= f.introduction %>
-<%= f.genre.genre_name if f.genre.present? %>
-<%= link_to '詳細', scenery_path(f) %>
- <span id=<%= "favorite_buttons_" + f.id.to_s %> >
-<%= render "public/favorites/favorite", scenery: f %>
-</span>
-<% end %>
+<%# each文より処理を軽くする %>
+<%= render partial: "public/sceneries/index", collection: @sceneries, as: 'sceneries' %>

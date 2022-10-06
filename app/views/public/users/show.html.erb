@@ -6,5 +6,7 @@
 <% end %>
 
 <%= @user.email %>
-
+<%= @user.name %>
+<% if @user == current_user %>
 <%= link_to "いいねした投稿", favorites_user_path(@user) %>
+<% end %>

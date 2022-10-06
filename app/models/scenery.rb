@@ -3,6 +3,7 @@ class Scenery < ApplicationRecord
   belongs_to :genre, optional: true
 
   has_many :favorites, dependent: :destroy
+  has_many :scenery_comments, dependent: :destroy
 
   has_one_attached :scenery_image
 

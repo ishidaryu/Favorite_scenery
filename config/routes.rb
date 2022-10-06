@@ -20,6 +20,7 @@ end
   root to: "sceneries#index"
   get 'homes/about'
   resources :sceneries, only: [:index, :create, :show, :destroy, :edit, :update] do
+    resources :scenery_comments, only: [:create, :destroy]
     resource :favorites, only: [:create, :destroy]
   end
   resources :users, only: [:show, :edit] do

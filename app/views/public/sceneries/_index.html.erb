@@ -1,0 +1,8 @@
+<%= image_tag sceneries.get_scenrery_image(250,250) %>
+<%= sceneries.name %>
+<%= sceneries.introduction %>
+<%= sceneries.genre.genre_name if sceneries.genre.present? %>
+<%= link_to '詳細', scenery_path(sceneries) %>
+ <div id=<%= "favorite_buttons_" + sceneries.id.to_s %> >
+<%= render "public/favorites/favorite", scenery: sceneries %>
+</div>

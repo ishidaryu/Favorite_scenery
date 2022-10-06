@@ -8,15 +8,23 @@
   ジャンル
   <%= @scenery.genre.genre_name if @scenery.genre.present? %>
 </h5>
+            <%= render "public/scenery_comments/counter", scenery: @scenery %>
 <% if @scenery.user == current_user %>
  <%= link_to '編集', edit_scenery_path(@scenery) %>
  <%= link_to 'Destroy', scenery_path(@scenery), method: :delete, "data-confirm" => "本当に消しますか?", class:"btn btn-sm btn-danger" %>
-<% end %>
-<% if @scenery.user == current_user %>
  <%= link_to 'マイページへ', user_path(current_user.id) %>
 <% else %>
- <%= link_to '投稿者', user_path(current_user.id) %>
- <% end %>
- <td class=<%= "favorite_buttons_" + @scenery.id.to_s %> >
+ <%= link_to '投稿者', user_path(@user) %>
+<% end %>
+ <span id=<%= "favorite_buttons_" + @scenery.id.to_s %> >
 <%= render "public/favorites/favorite", scenery: @scenery %>
-</td>
+</span>
+ <%= @scenery.user.name %>
+
+<div class="public-scenery-comments-index">
+<%= render "public/scenery_comments/index", scenery: @scenery %>
+</div>
+<%= render "public/scenery_comments/form", scenery: @scenery, scenery_comment: @scenery_comment %>
+
+
+
