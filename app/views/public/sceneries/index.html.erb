@@ -1,4 +1,10 @@
+    <div class="col-md-2 d-flex align-items-center justify-content-center">
+      <%= render "sidebar", genres: @genres %>
+    </div>
 <div>
+
+
+
 <%= form_with model: @scenery, url: sceneries_path do |f| %>
 <%= f.file_field :scenery_image, accept: "image/*" %>
 <%= f.text_field :name %>
@@ -6,6 +12,8 @@
 <%= f.collection_select :genre_id, Genre.all, :id, :genre_name, {include_blank: "---"}, class:"w-75" %>
 <%= f.submit %>
 <% end %>
+
+
 
 </div>
 <%# each文より処理を軽くする %>

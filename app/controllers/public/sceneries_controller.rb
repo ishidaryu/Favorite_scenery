@@ -3,7 +3,9 @@ class Public::SceneriesController < ApplicationController
   def index
   @scenery = Scenery.new
   @sceneries = Scenery.all
+  @search = Scenery.ransack(params[:q])
   @scenerys = Scenery.find_by(id: params[:id])
+  @genres = Genre.all
   end
 
   def create

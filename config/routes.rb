@@ -19,6 +19,7 @@ end
   scope module: :public do
   root to: "sceneries#index"
   get 'homes/about'
+  resources :genres, only: [:show]
   resources :sceneries, only: [:index, :create, :show, :destroy, :edit, :update] do
     resources :scenery_comments, only: [:create, :destroy]
     resource :favorites, only: [:create, :destroy]

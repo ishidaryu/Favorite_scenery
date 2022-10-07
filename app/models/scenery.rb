@@ -1,6 +1,6 @@
 class Scenery < ApplicationRecord
   belongs_to :user, optional: true
-  belongs_to :genre, optional: true
+  belongs_to :genre
 
   has_many :favorites, dependent: :destroy
   has_many :scenery_comments, dependent: :destroy
