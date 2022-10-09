@@ -1,18 +1,19 @@
-<div class='container'>
-  <div class='row'>
-    <div class="col-md-2 d-flex align-items-center justify-content-center">
-      <%= render "public/sceneries/sidebar", genres: @genres %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2 d-flex align-sceneries-center justify-content-center mr-5">
+      <%= render "public/sceneries/sidebar", genres: @genres %></br>
     </div>
     <div class="col-md-10">
-      <h4 class="mt-5"><strong><%= @genre.genre_name %>一覧</strong><span class="font">(全<%= @genreitems.count %>件)</span></h4>
-      <div class="row mx-auto">
-		  	<% @genreitems.each do |f| %>
-			  	<%= link_to scenery_path(f.id), data: {"turbolinks" => false}, class: "col-3 text-center text-dark text-nowrap mt-5" do %>
-						<%= image_tag f.get_scenrery_image(250,250) %><br>
-
-					<% end %>
-			<% end %>
-			</div>
-<%#			<div class="col-md-5 mx-auto"><%= paginate @genreitems %></div>
-		</div>
-	</div>
+      <h4 class="mt-5"><strong><%= @genre.genre_name %>一覧<span class="font"><span class="font">(全<%= @genreitems.count %>件)</span></strong></h4>
+      <div class="row mx-auto pb-5">
+        <% @genreitems.each do |f| %>
+          <%= link_to scenery_path(f.id), class: "col-sm-12 col-md-8 col-lg-5 text-center text-dark text-nowrap mt-5" do %>
+  				  <%= image_tag f.get_scenrery_image(250,400) %><br>
+            タイトル<%= f.name %><br>
+            説明<%= f.introduction %>
+          <% end %>
+  		  <% end %><br>
+  		</div>
+  	</div>
+  </div>
+</div>
