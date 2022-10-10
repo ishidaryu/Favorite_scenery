@@ -1,0 +1,10 @@
+<%= @user.id %>
+<%= @user.name %>
+
+<%= link_to 'ユーザー一覧へ', admin_users_path %>
+
+<% @sceneries.each do |f| %>
+<%= image_tag f.get_scenrery_image(250,250) %>
+<%= f.name %>
+<%= f.introduction %>
+<% end %>

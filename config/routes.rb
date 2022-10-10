@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
   resources :genres, only: [:index, :create, :destroy, :edit, :update,]
+  resources :users, only: [:index, :show]
 end
 
 
@@ -19,6 +20,7 @@ end
   scope module: :public do
   root to: "sceneries#index"
   get 'homes/about'
+  get "search" => "searches#search"
   resources :genres, only: [:show]
   resources :sceneries, only: [:index, :create, :show, :destroy, :edit, :update] do
     resources :scenery_comments, only: [:create, :destroy]
