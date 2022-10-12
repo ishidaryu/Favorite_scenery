@@ -1,0 +1,5 @@
+<%= @users.id %>
+<%= @users.name %>
+
+<%= link_to 'ユーザー一覧へ', admin_users_path %>
+<%= render partial: "admin/sceneries/show", collection: @sceneries, as: 'sceneries' %>
