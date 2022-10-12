@@ -32,12 +32,12 @@ end
     resource :favorites, only: [:create, :destroy]
   end
   resources :users, only: [:show, :edit] do
+    resource :relationships, only: [:create, :destroy]
+    get 'followings' => 'relationships#followings', as: 'followings'
+    get 'followers' => 'relationships#followers', as: 'followers'
     member do
       get :favorites
     end
-    resource :relationships, only: [:create, :destroy]
-      get 'followings' => 'relationships#followings', as: 'followings'
-      get 'followers' => 'relationships#followers', as: 'followers'
-    end
+  end
   end
 end

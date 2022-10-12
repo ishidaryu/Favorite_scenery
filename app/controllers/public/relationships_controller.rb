@@ -1,7 +1,7 @@
 class Public::RelationshipsController < ApplicationController
-
+  before_action :authenticate_user!
   def create
-    currnet_user.follow(params[:user_id])
+    current_user.follow(params[:user_id])
     redirect_to request.referer
   end
 
@@ -13,7 +13,7 @@ class Public::RelationshipsController < ApplicationController
   # フォロー一覧
   def followings
     user = User.find(params[:user_id])
-    @user = user.followings
+    @users = user.followings
   end
 
   # フォロワー一覧
