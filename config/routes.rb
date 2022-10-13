@@ -26,7 +26,7 @@ end
   root to: "sceneries#index"
   get 'homes/about'
   get "search" => "searches#search"
-  post '/guest', to: 'guest_sessions#create'
+  post '/guests/guest_sign_in', to: 'guests#new_guest'
   resources :genres, only: [:show]
   resources :sceneries, only: [:index, :create, :show, :destroy, :edit, :update] do
     resources :scenery_comments, only: [:create, :destroy]
@@ -41,4 +41,5 @@ end
     end
   end
   end
+
 end
