@@ -26,6 +26,7 @@ end
   root to: "sceneries#index"
   get 'homes/about'
   get "search" => "searches#search"
+  post '/guest', to: 'guest_sessions#create'
   resources :genres, only: [:show]
   resources :sceneries, only: [:index, :create, :show, :destroy, :edit, :update] do
     resources :scenery_comments, only: [:create, :destroy]
