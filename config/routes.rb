@@ -25,6 +25,7 @@ end
   scope module: :public do
   root to: "sceneries#index"
   get 'homes/about'
+  get 'homes/t'
   get "search" => "searches#search"
   post '/guests/guest_sign_in', to: 'guests#new_guest'
   resources :genres, only: [:show]
