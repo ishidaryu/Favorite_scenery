@@ -1,3 +1,4 @@
 <%= image_tag sceneries.get_scenrery_image(250,250) %>
 <%= sceneries.name %>
 <%= sceneries.introduction %>
+<%= link_to 'Destroy', admin_scenery_path(sceneries), method: :delete, "data-confirm" => "本当に消しますか?", class:"btn btn-sm btn-danger" %>
