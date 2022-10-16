@@ -27,8 +27,8 @@
           <% if user_signed_in? %>
 
            <li>
-            <%= link_to homes_about_path, class:" nav-link text-light" do %>
-            <i class=""></i>概要
+            <%= link_to root_path, class:" nav-link text-light" do %>
+            <i class=""></i>TOPぺージ
             <% end %>
           </li>
 
@@ -83,7 +83,7 @@
           </li>
 
           <% end %>
-             <div class="d-flex justify-content-center mb-2">
+        <div class="d-flex justify-content-center mb-2">
         <%= render 'public/searches/serach' %>
         </div>
     </header>

@@ -20,7 +20,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#page-top">Scenery</a>
+
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
@@ -51,11 +51,19 @@
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-lg-8">
-                        <h2 class="text-white mb-4">Built with Bootstrap 5</h2>
+                        <h2 class="text-white mb-4">概要</h2>
                         <p class="text-white-50">
-                            Grayscale is a free Bootstrap theme created by Start Bootstrap. It can be yours right now, simply download the template on
-                            <a href="https://startbootstrap.com/theme/grayscale/">the preview page.</a>
-                            The theme is open source, and you can use it for any purpose, personal or commercial.
+                            このサイトは自分が訪れた場所の写真を投稿するサイトです。<br>
+                            このサイトには「ゲストログイン」という簡易的にログインができる機能があります。<br>
+                            この機能を使ってもらえると実際に投稿ができるようになります。<br>
+                            ですが、それ以外の機能は実際にログインをしないと使えないようになっています。<br>
+                            主に使える機能として、<br>
+                            ・フォロー機能<br>
+                            ・いいね機能(ブックマークとしても使える)<br>
+                            ・コメント機能<br>
+                            ・ジャンルや部分的な検索機能<br>
+                            以上です。<br>
+                            下記は投稿例です。
                         </p>
                     </div>
                 </div>
@@ -81,7 +89,7 @@
                 <!-- Project One Row-->
                 <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
                     <div class="cool-lg-6">
-                        <%= image_tag asset_path("IMG_2650"), class:"img-fluid" %>
+                        <%= image_tag asset_path("IMG_2650"), class: "img-fluid" %>
                     </div>
                     <div class="cool-lg-6">
                         <div class="bg-black text-center h-100 project">

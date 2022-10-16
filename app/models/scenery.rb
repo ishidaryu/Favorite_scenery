@@ -11,12 +11,12 @@ class Scenery < ApplicationRecord
       favorites.where(user_id: user.id).exists?
   end
 
-  def get_scenrery_image(width, height)
+  def get_scenrery_image
     unless scenery_image.attached?
       file_path = Rails.root.join('app/assets/images/no_image.jpg')
       scenery_image.attach(io: File.open(file_path), filename: 'default-image.jpg', content_type: 'image/jpeg')
     end
-      scenery_image.variant(resize_to_limit: [width, height]).processed
+      scenery_image
   end
 
   def self.looks(search, word)
