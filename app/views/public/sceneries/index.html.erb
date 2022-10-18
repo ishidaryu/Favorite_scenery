@@ -1,37 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Grayscale - Start Bootstrap Theme</title>
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
+<html class="fontawesome-i2svg-active fontawesome-i2svg-complete">
         <%= stylesheet_link_tag "sceneries", :media => "all" %>
-        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
-    <div class="col-md-2 d-flex align-items-center justify-content-center">
-      <%= render "sidebar", genres: @genres %>
-    </div>
 
 
+<p id="notice"></p>
+<div class=" px-5 px-sm-0">
+  <div class="row">
+    <%= render "public/sceneries/create", scenery: @scenery %>
 
-<%= form_with model: @scenery, url: sceneries_path do |f| %>
-<%= f.file_field :scenery_image, accept: "image/*" %>
-<%= f.text_field :name, class: "textArea" %>
-<%= f.text_area :introduction, class: "introduction textArea" %>
-<%= f.collection_select :genre_id, Genre.all, :id, :genre_name, {include_blank: "---"}, class:"w-75" %>
-<%= f.submit %>
-<% end %>
+       <div class="col-md-8 offset-md-1">
+       <h2>投稿一覧</h2>
+      <table class="table table-hover table-inverse">
 
-
-
-</div>
 <%# each文より処理を軽くする %>
 <%= render partial: "public/sceneries/index", collection: @sceneries, as: 'sceneries' %>

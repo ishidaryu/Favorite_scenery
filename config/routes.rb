@@ -28,6 +28,7 @@ end
   get "search" => "searches#search"
   post '/guests/guest_sign_in', to: 'guests#new_guest'
   resources :genres, only: [:show]
+  post '/sceneries/create', to: 'sceneries#create'
   resources :sceneries, only: [:index, :create, :show, :destroy, :edit, :update] do
     resources :scenery_comments, only: [:create, :destroy]
     resource :favorites, only: [:create, :destroy]

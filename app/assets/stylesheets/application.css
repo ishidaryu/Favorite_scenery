@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+.box01 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.box01 .item {
+    border: solid 1px #000;
+    margin: 5px;
+    padding: 5px;
+    width: 31%;
+}
