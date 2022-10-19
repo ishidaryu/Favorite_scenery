@@ -442,6 +442,14 @@
   color: #fff;
 }
 
+.container, .container-fluid, .container-xl, .container-lg, .container-md, .container-sm {
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .footer {
   padding: 5rem 0;
 }
@@ -578,4 +586,8 @@ a.btn-flat:hover:before {
     margin: 5px;
     padding: 5px;
     width: 31%;
+}
+.right{
+    margin-left: auto;
+    background-color: chartreuse;
 }

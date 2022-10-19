@@ -1,4 +1,4 @@
-<%= stylesheet_link_tag "users", :media => "all" %>
+<%= stylesheet_link_tag "sceneries", :media => "all" %>
 <%= @user.name %>
     <th>follows</th>
     <th><%= link_to @user.followings.count, user_followings_path(@user) %></th>
@@ -16,18 +16,21 @@
   <%= link_to "フォローする", user_relationships_path(@user.id), method: :post %>
 <% end %>
 <% @sceneries.each do |f| %>
-        <section class="projects-section bg-light" id="projects">
-            <div class="container px-4 px-lg-5">
+<p id="notice"></p>
+<div class=" px-5 px-sm-0">
+  <div class="row">
+
+            <div class="container ">
                 <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
                     <div class="cool-lg-6">
-                        <%= image_tag f.get_scenrery_image, class:"img-fluid" %>
+                        <%= image_tag f.get_scenrery_image, class:"img-fluid " %>
                     </div>
                     <div class="cool-lg-6">
                         <div class="bg-black text-center h-100 project">
                             <div class="d-flex h-100">
                                 <div class="project-text w-100 my-auto text-center text-lg-left">
                                     <h4 class="text-white"><%= f.name %></h4>
-                                    <p class="mb-0 text-white-50"><%= f.introduction %></p><br>
+                                    <p class="mb-0 text-white"><%= f.introduction %></p><br>
                                      <%= link_to '詳細へ', scenery_path(f) %>
                                     <hr class="d-none d-lg-block mb-0 ms-0" />
                                 </div>

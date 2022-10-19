@@ -1,11 +1,16 @@
+        <%= stylesheet_link_tag "scenery_comments", :media => "all" %>
 <table>
   <tbody>
-      <% scenery.scenery_comments.each do |book_comment| %>
+      <% scenery.scenery_comments.each do |f| %>
       <tr>
-        <td><%= book_comment.comment %></td>
+        <td><%= f.comment %></td>
         <td>
-          <% if book_comment.user == current_user %>
-            <%= link_to "Destroy", scenery_scenery_comment_path(scenery, book_comment), method: :delete, class: "btn btn-danger pull-right", remote: true %>
+          <% if f.user == current_user %>
+
+<a>
+  <span><%= link_to "Destroy", scenery_scenery_comment_path(scenery, f), method: :delete, class: "bttn bttn-border", remote: true %></span>
+</a>
+
           <% end %>
         </td>
       </tr>
