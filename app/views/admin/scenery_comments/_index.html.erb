@@ -7,11 +7,11 @@
           <h4><%= f.comment %></h4>
         </td>
         <td>
-          <% if f.user == current_user %>
+
             <a>
-              <span><%= link_to "Destroy", scenery_scenery_comment_path(scenery, f), method: :delete, class: "bttn bttn-border", "data-confirm" => "本当に消しますか?", remote: true %></span>
+              <span><%= link_to "Destroy", admin_scenery_scenery_comment_path(scenery, f), method: :delete, class: "bttn bttn-border", "data-confirm" => "本当に消しますか?", remote: true %></span>
            </a>
-          <% end %>
+
         </td>
       </tr>
       <% end %>

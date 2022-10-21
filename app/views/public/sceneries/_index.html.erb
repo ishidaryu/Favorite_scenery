@@ -1,13 +1,13 @@
         <section class="projects-sections " id="projects">
             <div class="container px-4 px-lg-5">
-                <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+                <div class="row gx-0 mb-4 mb-lg-5 ">
                     <div class="cool-lg-7">
                         <%= link_to  scenery_path(sceneries) do %>
                         <%= image_tag sceneries.get_scenrery_image, class:"img-fluid mb-3 mb-lg-0" %>
                     </div>
-                        <div class="featured-text text-center text-lg-left">
-                            <h4><%= sceneries.name %></h4>
-                            <p class="text-black-50 mb-0"><%= sceneries.introduction %></p>
+                        <div class="featured-text ">
+                            <h4 class="text-left text-black">　<%= sceneries.name%></h4>
+                            <h6 class="col-2 text-truncate text-black mb-0"><%= sceneries.introduction %></h6>
                         </div>
                         <% end %>
                         <div id=<%= "favorite_buttons_" + sceneries.id.to_s %> >

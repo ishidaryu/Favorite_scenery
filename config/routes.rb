@@ -16,13 +16,17 @@ Rails.application.routes.draw do
 
   namespace :admin do
   resources :genres, only: [:index, :create, :destroy, :edit, :update,]
-  resources :sceneries, only: [:index, :show, :destroy]
+  resources :sceneries, only: [:index, :create, :show, :destroy, :edit, :update] do
+    resources :scenery_comments, only: [:create, :destroy]
+    resource :favorites, only: [:create, :destroy]
+  end
   resources :users, only: [:index, :show, :destroy]
 end
 
 
 
   scope module: :public do
+  resources :contacts, only: [:new, :create]
   root to: 'homes#top'
   get 'homes/about'
   get "search" => "searches#search"

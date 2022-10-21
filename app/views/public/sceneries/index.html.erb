@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html class="fontawesome-i2svg-active fontawesome-i2svg-complete">
         <%= stylesheet_link_tag "sceneries", :media => "all" %>
+    <% if user_signed_in? %>
+<%= link_to "お問い合わせ", new_contact_path(user_id: current_user.id ) %>
+<% else %>
+<% end %>
 
 
 <p id="notice"></p>
@@ -14,3 +18,5 @@
 
 <%# each文より処理を軽くする %>
 <%= render partial: "public/sceneries/index", collection: @sceneries, as: 'sceneries' %>
+
+<%= render "kaminari/index",  sceneries: @sceneries %>

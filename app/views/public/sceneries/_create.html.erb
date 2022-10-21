@@ -1,3 +1,4 @@
+        <%= stylesheet_link_tag "sceneries", :media => "all" %>
 <div  class="col-md-3">
 
   <div class="containers px-4 px-lg-5">
@@ -35,7 +36,7 @@
                   <p>説明</p>
                 <%= f.collection_select :genre_id, Genre.all, :id, :genre_name, {include_blank: "---"} %><br>
                 </div>
-                 <a class="btn btn-flat"><span><%= f.submit class:"btn  btn-flat" %></span></a>
+                 <a class="btn btn-flat"><span><%= f.submit class:"btn btn-flat" %></span></a>
 <% end %>
 </div>
 </div>

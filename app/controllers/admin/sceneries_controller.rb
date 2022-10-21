@@ -1,14 +1,15 @@
 class Admin::SceneriesController < ApplicationController
 
   def show
-    @users = User.find(params[:id])
-    @sceneries = @users.sceneries
+    @scenery = Scenery.find_by(id: params[:id])
+    @user = @scenery.user
+    @scenery_comment = SceneryComment.new
   end
 
   def destroy
     @sceneries = Scenery.find_by(id: params[:id])
     @sceneries.destroy
-    redirect_to admin_scenery_path(@sceneries)
+    redirect_to admin_user_path(@sceneries)
   end
 
 

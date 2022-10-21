@@ -493,24 +493,62 @@
   padding: 5rem 0;
 }
 
-.button {
-  display       : inline-block;
-  border-radius : 50%;          /* 角丸       */
-  font-size     : 20pt;        /* 文字サイズ */
-  text-align    : center;      /* 文字位置   */
-  cursor        : pointer;     /* カーソル   */
-  padding       : 24px 37px;   /* 余白       */
-  background    : #000000;     /* 背景色     */
-  color         : #ffffff;     /* 文字色     */
-  line-height   : 1em;         /* 1行の高さ  */
-  opacity       : 0.9;         /* 透明度     */
-  transition    : .3s;         /* なめらか変化 */
-  box-shadow    : 10px 10px 6px #666666;  /* 影の設定 */
+.btn,
+a.btn,
+button.btn {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+
+  border-radius: 0.5rem;
 }
-.button:hover {
-  box-shadow    : none;        /* カーソル時の影消去 */
-  opacity       : 1;           /* カーソル時透明度 */
+a.btn-border {
+  border-radius: 0;
 }
+
+a.btn-border:before,
+a.btn-border:after {
+  position: absolute;
+
+  width: 100%;
+  height: 3px;
+
+  content: '';
+  -webkit-transition: all .3s;
+  transition: all .3s;
+
+  background: #000;
+}
+
+a.btn-border:before {
+  top: 0;
+  left: 0;
+}
+
+a.btn-border:after {
+  right: 0;
+  bottom: 0;
+}
+
+a.btn-border:hover:before,
+a.btn-border:hover:after {
+  width: 0;
+}
+
 
 .row {
     --bs-gutter-x: 1.5rem;
@@ -547,70 +585,8 @@
     padding-right: 1.5rem !important;
     padding-left: 1.5rem !important;
 }
-.mb-5 {
-    margin-bottom: 3rem !important;
-}
 @media (min-width: 992px) {
 .mb-lg-0 {
     margin-bottom: 0 !important;
 }
-}
-
-
-.btn,
-a.btn,
-button.btn {
-  font-size: 1.6rem;
-  font-weight: 700;
-  line-height: 1.5;
-  position: relative;
-  display: inline-block;
-  padding: 1rem 4rem;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  text-align: center;
-  vertical-align: middle;
-  text-decoration: none;
-  letter-spacing: 0.1em;
-  color: #212529;
-  border-radius: 0.5rem;
-}
-
-/*背景*/
-a.btn-border {
-  border-radius: 0;
-}
-
-a.btn-border:before,
-a.btn-border:after {
-  position: absolute;
-
-  width: 100%;
-  height: 2px;
-
-  content: '';
-  -webkit-transition: all .3s;
-  transition: all .3s;
-
-  background: #000;
-}
-
-a.btn-border:before {
-  top: 0;
-  left: 0;
-}
-
-a.btn-border:after {
-  right: 0;
-  bottom: 0;
-}
-
-a.btn-border:hover:before,
-a.btn-border:hover:after {
-  width: 0;
 }

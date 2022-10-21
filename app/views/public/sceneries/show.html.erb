@@ -1,8 +1,20 @@
-<h5>
+<%= stylesheet_link_tag "scenery_show", :media => "all" %>
+<p id="notice"></p>
+<div class=" px-4 px-sm-0">
+<h4>
   ジャンル
-  ＜<%= @scenery.genre.genre_name if @scenery.genre.present? %>＞
-</h5>
-
+  【 <%= @scenery.genre.genre_name if @scenery.genre.present? %> 】
+</h4>
+<% if @scenery.user == current_user %>
+ <%= link_to '編集', edit_scenery_path(@scenery) %>
+ <%= link_to 'Destroy', scenery_path(@scenery), method: :delete, "data-confirm" => "本当に消しますか?" %>
+ <%= link_to 'マイページへ', user_path(current_user.id) %>
+<% else %>
+ <h4>
+<%= link_to '投稿者へ', user_path(@user) %>
+</h4>
+<% end %>
+</div>
 <section class="projects-section" id="projects">
   <div class="containers px-4 px-lg-5">
     <div class="row gx-0 mb-4 mb-lg-5">
@@ -20,18 +32,11 @@
     </div>
   </div>
   <div class="containers px-4 px-lg-5">
-            <%= render "public/scenery_comments/counter", scenery: @scenery %>
-<% if @scenery.user == current_user %>
- <%= link_to '編集', edit_scenery_path(@scenery) %>
- <%= link_to 'Destroy', scenery_path(@scenery), method: :delete, "data-confirm" => "本当に消しますか?", class:"" %>
- <%= link_to 'マイページへ', user_path(current_user.id) %>
-<% else %>
- <%= link_to '投稿者', user_path(@user) %>
-<% end %>
- <span id=<%= "favorite_buttons_" + @scenery.id.to_s %> >
-<%= render "public/favorites/favorite", scenery: @scenery %>
-</span>
- <%= @scenery.user.name %>
+    <div class="public-scenery-comments-counter">
+      <%= render "public/scenery_comments/counter", scenery: @scenery %>
+    </div>
+
+
 
 <%= render "public/scenery_comments/form", scenery: @scenery, scenery_comment: @scenery_comment %>
 <div class="public-scenery-comments-index">
