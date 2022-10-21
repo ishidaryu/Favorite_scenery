@@ -24,9 +24,8 @@ Rails.application.routes.draw do
 end
 
 
-
-  scope module: :public do
   resources :contacts, only: [:new, :create]
+  scope module: :public do
   root to: 'homes#top'
   get 'homes/about'
   get "search" => "searches#search"
