@@ -19,6 +19,7 @@ class Scenery < ApplicationRecord
       scenery_image
   end
 
+
   def self.looks(search, word)
     if search == "perfect_match"
       @scenery = Scenery.where("name LIKE?","#{word}")

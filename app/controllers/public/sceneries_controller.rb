@@ -2,10 +2,11 @@ class Public::SceneriesController < ApplicationController
 
   def index
   @scenery = Scenery.new
-  @sceneries = Scenery.all.page(params[:page]).per(1)
+  @sceneries = Scenery.all.page(params[:page]).per(15)
   @search = Scenery.ransack(params[:q])
   @scenerys = Scenery.find_by(id: params[:id])
   @genres = Genre.all
+  @user = current_user
   end
 
   def create

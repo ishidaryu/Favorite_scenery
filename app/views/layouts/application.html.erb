@@ -54,10 +54,11 @@
             <% end %>
           </li>
 
-          <div class="text-light">
-          <%= current_user.name %>
-          </div>
-
+          <li>
+            <%= link_to new_contact_path(user_id: current_user.id), class:" nav-link text-light" do %>
+            <i class="fas fa-sign-out-alt"></i>お問い合わせ
+            <% end %>
+          </li>
 
           <% else %>
 

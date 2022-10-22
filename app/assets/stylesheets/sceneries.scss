@@ -81,6 +81,7 @@
 }
 
  .projects-sections .project-text {
+    padding: 2rem 0;
     font-size: 90%;
 }
  .h-100 {
@@ -329,24 +330,6 @@
   background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
 }
 
-@media (min-width: 992px) {
-  .projects-sections .featured-text {
-    border-left: 0.5rem solid #64a19d;
-  }
-}
-.projects-sections .project-text {
-  font-size: 90%;
-}
-@media (min-width: 992px) {
-  .projects-sections .project-text hr {
-    border-color: #64a19d;
-    border-width: 0.25rem;
-    width: 30%;
-  }
-}
-
-
-
 @media (min-width: 768px) {
   .masthead h1, .masthead .h1 {
     font-size: 4rem;
@@ -375,24 +358,24 @@
 .about-section p {
   margin-bottom: 5rem;
 }
-
 @media (min-width: 992px) {
   .projects-sections .featured-text {
     border-left: 0.5rem solid #64a19d;
+    padding: 2rem 0;
   }
 }
 .projects-sections .project-text {
   font-size: 90%;
+    padding: 2rem 0;
 }
 @media (min-width: 992px) {
-
   .projects-sections .project-text hr {
     border-color: #64a19d;
+    padding: 2rem 0;
     border-width: 0.25rem;
     width: 30%;
   }
 }
-
 
 .signup-section .form-signup input {
   box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
@@ -590,4 +573,13 @@ a.btn-flat:hover:before {
 .right{
     margin-left: auto;
     background-color: chartreuse;
+}
+.px-4 {
+    padding-right: 1.5rem !important;
+    padding-left: 1.5rem !important;
+}
+.text-truncates {
+    /* overflow: hidden; */
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }

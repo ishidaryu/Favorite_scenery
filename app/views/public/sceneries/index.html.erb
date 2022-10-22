@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html class="fontawesome-i2svg-active fontawesome-i2svg-complete">
         <%= stylesheet_link_tag "sceneries", :media => "all" %>
-    <% if user_signed_in? %>
-<%= link_to "お問い合わせ", new_contact_path(user_id: current_user.id ) %>
-<% else %>
-<% end %>
 
 
 <p id="notice"></p>
 <div class=" px-5 px-sm-0">
   <div class="row">
-    <%= render "public/sceneries/create", scenery: @scenery %>
+    <%= render "public/sceneries/create", scenery: @scenery, user: @user %>
 
        <div class="col-md-8 offset-md-1">
        <h2>投稿一覧</h2>
