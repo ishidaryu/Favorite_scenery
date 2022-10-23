@@ -26,7 +26,9 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav ml-auto">
 
-
+        <div class=" mb-2">
+        <%= render 'public/searches/serach' %>
+        </div>
 
           <% if user_signed_in? %>
 
@@ -51,6 +53,12 @@
           <li>
             <%= link_to destroy_user_session_path, method: :delete, class:" nav-link text-light" do %>
             <i class="fas fa-sign-out-alt"></i>Log out
+            <% end %>
+          </li>
+
+          <li>
+            <%= link_to favorites_user_path(@user), class:" nav-link text-light" do %>
+            <i class="fas fa-sign-out-alt"></i>いいね一覧
             <% end %>
           </li>
 
@@ -88,9 +96,7 @@
           </li>
 
           <% end %>
-        <div class="d-flex justify-content-center mb-2">
-        <%= render 'public/searches/serach' %>
-        </div>
+
     </header>
   <body>
     <%= yield %>
