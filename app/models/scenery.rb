@@ -1,8 +1,12 @@
 class Scenery < ApplicationRecord
-  belongs_to :user, optional: true
+  validates :name,            presence: true, length: { maximum: 30}
+  validates :introduction,    presence: true, length: { maximum: 200}
+  validates :get_scenrery_image,    presence: true
+
+  belongs_to :user,           optional: true
   belongs_to :genre
 
-  has_many :favorites, dependent: :destroy
+  has_many :favorites,        dependent: :destroy
   has_many :scenery_comments, dependent: :destroy
 
   has_one_attached :scenery_image
@@ -11,6 +15,7 @@ class Scenery < ApplicationRecord
       favorites.where(user_id: user.id).exists?
   end
 
+## 画像
   def get_scenrery_image
     unless scenery_image.attached?
       file_path = Rails.root.join('app/assets/images/no_image.jpg')
@@ -19,7 +24,7 @@ class Scenery < ApplicationRecord
       scenery_image
   end
 
-
+##　検索機能
   def self.looks(search, word)
     if search == "perfect_match"
       @scenery = Scenery.where("name LIKE?","#{word}")

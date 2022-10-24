@@ -1,19 +1,25 @@
 class Public::SceneriesController < ApplicationController
 
   def index
-  @scenery = Scenery.new
-  @sceneries = Scenery.all.page(params[:page]).per(15)
-  @search = Scenery.ransack(params[:q])
-  @scenerys = Scenery.find_by(id: params[:id])
-  @genres = Genre.all
-  @user = current_user
+    @scenery = Scenery.new
+    @sceneries = Scenery.all.page(params[:page]).per(15)
+    @search = Scenery.ransack(params[:q])
+    @scenerys = Scenery.find_by(id: params[:id])
+    @genres = Genre.all
+    @user = current_user
   end
 
   def create
-  @scenery = Scenery.new(scenery_params)
-  @scenery.user_id = current_user.id
-  @scenery.save
-  redirect_to user_path(current_user.id)
+    @scenery = Scenery.new(scenery_params)
+    @scenery.user_id = current_user.id
+    if @scenery.save
+    redirect_to user_path(current_user.id)
+    else
+    @sceneries = Scenery.all.page(params[:page]).per(15)
+    @genres = Genre.all
+    @user = current_user
+    render :index
+    end
   end
 
   def show

@@ -35,7 +35,7 @@
                   <p>ジャンル</p>
                 <%= f.collection_select :genre_id, Genre.all, :id, :genre_name, {include_blank: "---"}, class: "w-100 my-auto" %><br>
                 </div>
-                 <a class="btn btn-flat"><span><%= f.submit class:"btn btn-flat" %></span></a>
+                 <a class="btn btn-flat"><span><%= f.submit "投 稿 す る ！", class:"btn btn-flat" %></span></a>
 <% end %>
 </div>
 </div>

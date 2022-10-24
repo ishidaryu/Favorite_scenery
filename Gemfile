@@ -60,4 +60,5 @@ gem 'jquery-rails'
 gem 'kaminari'
 gem "net-smtp"
 gem 'ransack'
+gem 'rails-i18n'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
