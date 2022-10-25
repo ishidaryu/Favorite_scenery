@@ -1,41 +1,41 @@
-        <%= stylesheet_link_tag "sceneries", :media => "all" %>
+<%= stylesheet_link_tag "sceneries", :media => "all" %>
 <div  class="col-md-3">
-
   <div class="containers px-4 px-lg-5">
-      <%= render "sidebar", genres: @genres %>
-  <h2>User info</h2>
-            <table class="table">
+    <%= render "sidebar", genres: @genres %>
+    <% if user == current_user %>
+    <% else %>
+      <h2>User info</h2>
+        <table class="table">
           <tbody>
-　          <tr></tr>
-　          <tr>
-　            <th>name</th>
-　            <th><%= current_user.name %></th>
-　        </tr>
-　        <%# フォロウ＆フォロワーの数 %>
-          <%= render "public/users/followings", user: @user %>
-　       </tbody>
-     　</table>
-
-     　<h2 class="mt-3">投稿</h2>
-
-<%= form_with model: scenery, url: sceneries_path do |f| %>
-                <div class="form-group">
-                  <p>投稿写真</p>
-                  <%= f.file_field :scenery_image, accept: "image/*" %><br>
-                </div>
-                <div class="form-group">
-                  <p>タイトル</p>
-                  <%= f.text_field :name, class: "textArea" %><br>
-                </div>
-                <div class="form-group">
-                  <p>説明</p>
-                  <%= f.text_area :introduction, class: "introduction textArea" %><br>
-                </div>
-                <div class="form-group">
-                  <p>ジャンル</p>
-                <%= f.collection_select :genre_id, Genre.all, :id, :genre_name, {include_blank: "---"}, class: "w-100 my-auto" %><br>
-                </div>
-                 <a class="btn btn-flat"><span><%= f.submit "投 稿 す る ！", class:"btn btn-flat" %></span></a>
-<% end %>
-</div>
+            <tr></tr>
+            <tr>
+              <th>name</th>
+              <th><%= current_user.name %></th>
+            </tr>
+　          <%# フォロウ＆フォロワーの数 %>
+            <%= render "public/users/followings", user: @user %>
+          </tbody>
+        </table>
+      <h2 class="mt-3">投稿</h2>
+      <%= form_with model: scenery, url: sceneries_path do |f| %>
+        <div class="form-group">
+          <p>投稿写真</p>
+          <%= f.file_field :scenery_image, accept: "image/*" %><br>
+        </div>
+        <div class="form-group">
+          <p>タイトル</p>
+          <%= f.text_field :name, class: "textArea" %><br>
+        </div>
+        <div class="form-group">
+          <p>説明</p>
+            <%= f.text_area :introduction, class: "introduction textArea" %><br>
+        </div>
+        <div class="form-group">
+          <p>ジャンル</p>
+          <%= f.collection_select :genre_id, Genre.all, :id, :genre_name, {include_blank: "---"}, class: "w-100 my-auto" %><br>
+        </div>
+        <a class="btn btn-flat"><span><%= f.submit "投 稿 す る ！", class:"btn btn-flat" %></span></a>
+      <% end %>
+    <% end %>
+  </div>
 </div>

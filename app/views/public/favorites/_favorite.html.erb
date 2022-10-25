@@ -1,13 +1,14 @@
 <% if user_signed_in? %>
-<% if scenery.favorited_by?(current_user) %>
-  <%= link_to scenery_favorites_path(scenery), method: :delete, remote: true, data: {"turbolinks" => false} do %>
-    <i class="fas fa-heart" aria-hidden="true" style="color: red;"></i>
-  <%= scenery.favorites.count %>
-  <% end %>
-<% else %>
-  <%= link_to scenery_favorites_path(scenery), method: :post, remote: true, data: {"turbolinks" => false} do %>
-    <i class="fas fa-heart" aria-hidden="true"></i>
-  <%= scenery.favorites.count %>
+  <% if scenery.favorited_by?(current_user) %>
+    <%= link_to scenery_favorites_path(scenery), method: :delete, remote: true, data: {"turbolinks" => false} do %>
+      <i class="fas fa-heart" aria-hidden="true" style="color: red;"></i>
+      <%= scenery.favorites.count %>
+    <% end %>
+  <% else %>
+    <%= link_to scenery_favorites_path(scenery), method: :post, remote: true, data: {"turbolinks" => false} do %>
+      <i class="fas fa-heart" aria-hidden="true"></i>
+      <%= scenery.favorites.count %>
+    <% end %>
   <% end %>
 <% end %>
-<% end %>
+

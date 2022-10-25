@@ -9,10 +9,10 @@ Rails.application.routes.draw do
   sessions: 'public/sessions'
 }
 
+
   devise_for :admin, controllers: {
   sessions: "admin/sessions"
 }
-
 
   namespace :admin do
   resources :genres, only: [:index, :create, :destroy, :edit, :update,]
@@ -24,17 +24,21 @@ Rails.application.routes.draw do
 end
 
 
+
   resources :contacts, only: [:new, :create]
   scope module: :public do
   root to: 'homes#top'
   get 'homes/about'
   get "search" => "searches#search"
-  post '/guests/guest_sign_in', to: 'guests#new_guest'
+
   resources :genres, only: [:show]
   post '/sceneries/create', to: 'sceneries#create'
   resources :sceneries, only: [:index, :create, :show, :destroy, :edit, :update] do
     resources :scenery_comments, only: [:create, :destroy]
     resource :favorites, only: [:create, :destroy]
+  end
+    devise_scope :user do
+      post 'users/guest_sign_in', to: 'sessions#guest_sign_in'
   end
   resources :users, only: [:show, :edit] do
     resource :relationships, only: [:create, :destroy]

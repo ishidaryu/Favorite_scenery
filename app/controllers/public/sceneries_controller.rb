@@ -1,5 +1,6 @@
 class Public::SceneriesController < ApplicationController
 
+
   def index
     @scenery = Scenery.new
     @sceneries = Scenery.all.page(params[:page]).per(15)
@@ -43,6 +44,7 @@ class Public::SceneriesController < ApplicationController
   @scenery.update(scenery_params)
   redirect_to  scenery_path(@scenery)
   end
+
 
 private
 

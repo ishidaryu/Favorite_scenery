@@ -30,7 +30,15 @@ class User < ApplicationRecord
   def following?(user)
     followings.include?(user)
   end
+## ゲストログイン
+  def self.guest
+    find_or_create_by!(email: 'guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
 
+      user.name = "ゲスト"
+    end
+  end
+##　検索
   def self.looks(search, word)
     if search == "perfect_match"
       @user = User.where("name LIKE?", "#{word}")

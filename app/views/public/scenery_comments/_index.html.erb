@@ -1,7 +1,7 @@
-        <%= stylesheet_link_tag "scenery_comments", :media => "all" %>
+<%= stylesheet_link_tag "scenery_comments", :media => "all" %>
 <table>
   <tbody>
-      <% scenery.scenery_comments.each do |f| %>
+    <% scenery.scenery_comments.each do |f| %>
       <tr>
         <td>
           <h4><%= f.comment %>　</h4>
@@ -14,6 +14,6 @@
           <% end %>
         </td>
       </tr>
-      <% end %>
+    <% end %>
   </tbody>
 </table>

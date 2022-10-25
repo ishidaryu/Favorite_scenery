@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html class="fontawesome-i2svg-active fontawesome-i2svg-complete">
-        <%= stylesheet_link_tag "sceneries", :media => "all" %>
-
-
+<%= stylesheet_link_tag "sceneries", :media => "all" %>
 <p id="notice"></p>
-
 <%= render "layouts/error_messages", scenery: @scenery %>
-<div class=" px-5 px-sm-0">
-  <div class="row">
-    <%= render "public/sceneries/create", scenery: @scenery, user: @user %>
-
-       <div class="col-md-8 offset-md-1">
-       <h2>投稿一覧</h2>
-      <table class="table table-hover table-inverse">
-
-<%# each文より処理を軽くする %>
-<%= render partial: "public/sceneries/index", collection: @sceneries, as: 'sceneries' %>
-
-<%= render "kaminari/index",  sceneries: @sceneries %>
+  <div class=" px-5 px-sm-0">
+    <div class="row">
+      <%= render "public/sceneries/create", scenery: @scenery, user: @user %>
+      <div class="col-md-8 offset-md-1">
+        <h2>投稿一覧</h2>
+        <table class="table table-hover table-inverse">
+          <%# each文より処理を軽くする %>
+          <%= render partial: "public/sceneries/index", collection: @sceneries, as: 'sceneries' %>
+          <%= render "kaminari/index",  sceneries: @sceneries %>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
