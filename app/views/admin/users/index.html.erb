@@ -1,7 +1,20 @@
-   <% @users.each do |f| %>
-      <tr>
-        <td><%= f.id %></td>
-        <td><%= f.name %></td>
-      </tr>
-      <%= link_to '詳細へ', admin_user_path(f.id) %>
-　 <% end %>
+<%= stylesheet_link_tag "admin_user", :media => "all" %>
+<p id="notice"></p>
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-md-8 offset-md-1">
+      <h2>ユーザー一覧</h2>
+      <table class="table table-hover table-inverse">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th></th>
+            <th>名前</th>
+          </tr>
+        </thead>
+        <%= render partial: "admin/users/index", collection: @users, as: 'users' %>
+      </table>
+      <%= render "kaminari/admin_users_index",  sceneries: @users %>
+    </div>
+  </div>
+</div>
