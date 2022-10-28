@@ -5,4 +5,9 @@ class SceneriesControllerTest < ActionDispatch::IntegrationTest
     get sceneries_index_url
     assert_response :success
   end
+
+  test "should get show" do
+    get sceneries_show_url
+    assert_response :success
+  end
 end

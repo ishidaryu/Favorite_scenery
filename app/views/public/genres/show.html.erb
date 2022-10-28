@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-2 d-flex align-sceneries-center justify-content-center mr-5">
+      <%= render "public/sceneries/sidebar", genres: @genres %></br>
+    </div>
+
+    <div class="col-md-10">
+      <h4 class="mt-5"><strong><%= @genre.genre_name %>一覧<span class="font"><span class="font">(全<%= @genreitems.count %>件)</span></strong></h4>
+      <div class="row mx-auto pb-5">
+        <% @genreitems.each do |f| %>
+          <%= link_to scenery_path(f.id), class: "col-sm-12 col-md-8 col-lg-5 text-center text-dark text-nowrap mt-5" do %>
+  				  <%= image_tag f.get_scenrery_image %><br>
+            タイトル<%= f.name %><br>
+            説明<%= f.introduction %>
+          <% end %>
+  		  <% end %><br>
+  		</div>
+  	</div>
+  </div>
+</div>

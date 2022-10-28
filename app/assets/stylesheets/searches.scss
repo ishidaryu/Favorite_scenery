@@ -1,0 +1,20 @@
+.topIcon {
+  display       : inline-block;
+  margin        : 0 0 0 5px;
+  padding       : 8px 11px;   /* 余白       */
+  background    : #000000;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  opacity       : 0.5;         /* 透明度     */
+  border-radius : 20%;        /* 角丸       */
+  font-size     : 8.5pt;        /* 文字サイズ */
+  font-weight   : bold;        /* 太字       */
+  line-height   : 1.2em;       /* 行の高さ   */
+  letter-spacing: 2px;         /* 文字間隔   */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  z-index       : 999;         /* 重ね順位   */
+}
+
+.topIcon:hover {
+  opacity       : 0.9;   /* カーソル時透明度 */
+}

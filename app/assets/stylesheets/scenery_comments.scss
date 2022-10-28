@@ -1,0 +1,40 @@
+// Place all the styles related to the scenery_comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+
+.bttn,
+a.bttn,
+button.bttn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+a.bttn-border {
+  border: 2px solid #000;
+  border-radius: 0;
+  background: #fff;
+}
+
+a.bttn-border:hover {
+  color: #fff;
+  background: #000;
+}

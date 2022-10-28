@@ -1,0 +1,50 @@
+<%= stylesheet_link_tag "contacts", :media => "all" %>
+      <% if @contact.errors.any? %>
+        <div id="error_explanation">
+          <ul><% @contact.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+<!DOCTYPE html>
+<body>
+  <div class="contact"></div>
+ <h1 class="contact-ttl">お問い合わせ</h1>
+      <%= form_with(model: @contact, local: true) do |f| %>
+ <form action="">
+  <table class="contact-table">
+  <tr>
+    <th class="contact-item">お名前</th>
+    <td class="contact-body">
+      <%= f.text_field :name, placeholder: "ユーザー名を入力してください", class: "form-text" %>
+    </td>
+  </tr>
+
+  <tr>
+    <th class="contact-item">お問い合わせ内容</th>
+    <td class="contact-body">
+      <%= f.text_area :content, placeholder: "お問合せ内容を入力してください", class: "form-textarea" %>
+    </td>
+  </tr>
+<div class="contact-ttl">
+
+            <th class="contact-item"></th>
+            <td class="contact-body">
+            <%= f.button type: "submit", class:"contact-submit", style:'border-style: none;' do %>
+                送信 <i class="fas fa-paper-plane"></i>
+              <% end %>
+            </td>
+
+            <td>
+              <%#= link_to "もどる", sceneries_path, class:"register-red-btn" %>
+            </td>
+</div>
+          </tr>
+</body>
+
+      </div>
+    </div>
+</from>
+<% end %>
+</body>

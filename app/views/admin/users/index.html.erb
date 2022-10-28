@@ -1,0 +1,7 @@
+   <% @users.each do |f| %>
+      <tr>
+        <td><%= f.id %></td>
+        <td><%= f.name %></td>
+      </tr>
+      <%= link_to '詳細へ', admin_user_path(f.id) %>
+　 <% end %>

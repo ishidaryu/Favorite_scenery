@@ -1,0 +1,7 @@
+<ul ng-repeat="user in currentitems" class="users">
+  <li>
+    <img alt="{\{user.name}}" src="https://secure.gravatar.com/avatar/{\{hash(user.email)}}?s=52" />
+    <a href="/users/{\{user.id}}">{\{user.name}}</a>
+    <a ng-show="{\{ychkAdmin}}" href="" ng-click="delete(user.id)">| delete</a>
+  </li>
+</ul>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Grayscale - Start Bootstrap Theme</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <%= stylesheet_link_tag "homes", :media => "all" %>
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container px-4 px-lg-5">
+
+        </nav>
+
+        <header class="masthead">
+            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+                <div class="d-flex justify-content-center">
+                    <div class="text-center">
+                        <h1 class="mx-auto my-0 text-uppercase">Sceneries</h1>
+                        <h2 class="text-white-50 mx-auto mt-2 mb-5">ようこそ、Sceneriesへ！　このサイトは自分で撮った写真をその時の感想と一緒に投稿するサイトです。</h2>
+                        <a href="sceneries" class="btn btn-border">Start！</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- About-->
+        <section class="about-section text-center" id="about">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8">
+                        <h2 class="text-white mb-4">概要</h2>
+                        <p class="text-left text-white">
+                            このサイトは自分が訪れた場所の写真を投稿するサイトです。<br>
+                            このサイトには「ゲストログイン」という簡易的にログインができる機能があります。<br>
+                            この機能を使ってもらえると実際に投稿ができるようになります。<br>
+                            ですが、それ以外の機能は実際にログインをしないと使えないようになっています。<br>
+                            主に使える機能として、<br>
+                            ・フォロー機能<br>
+                            ・いいね機能(ブックマークとしても使える)<br>
+                            ・コメント機能<br>
+                            ・ジャンルや部分的な検索機能<br>
+                            以上です。<br>
+                            下記は投稿例です。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Projects-->
+        <section class="projects-section bg-light" id="projects">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+                    <div class="cool-lg-7">
+                        <%= image_tag asset_path("bg-masthead.jpg"), class:"img-fluid mb-3 mb-lg-0" %>
+                    </div>
+                    <div class="cool-lg-5">
+                        <div class="featured-text text-center text-lg-left">
+                            <h4>山</h4>
+                            <p class="text-black mb-0">Grayscale is open source and MIT licensed. This means you can use it for any project - even commercial projects! Download it, customize it, and publish your website!</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project One Row-->
+                <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+                    <div class="cool-lg-6">
+                        <%= image_tag asset_path("IMG_2650"), class: "img-fluid" %>
+                    </div>
+                    <div class="cool-lg-6">
+                        <div class="bg-black text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-left">
+                                    <h4 class="text-white">龍ヶ窪</h4>
+                                    <p class="mb-0 text-white">この池は計算上一日ですべての水が入れ替わり決して濁ることがないと言われています。そして、水質だけではなく見た目もとても綺麗で幻想的です。</p>
+                                    <hr class="d-none d-lg-block mb-0 ms-0" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row gx-0 justify-content-center">
+                    <div class="cool-lg-6">
+                        <%= image_tag asset_path("demo-image-02.jpg"), class:"img-fluid" %>
+                    </div>
+                    <div class="cool-lg-6 order-lg-first">
+                        <div class="bg-black text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-right">
+                                    <h4 class="text-white">Mountains</h4>
+                                    <p class="mb-0 text-white">Another example of a project with its respective description. These sections work well responsively as well, try this theme on a small screen!</p>
+                                    <hr class="d-none d-lg-block mb-0 me-0" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

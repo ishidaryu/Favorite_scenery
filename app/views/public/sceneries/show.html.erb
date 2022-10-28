@@ -1,0 +1,47 @@
+<%= stylesheet_link_tag "scenery_show", :media => "all" %>
+<p id="notice"></p>
+<div class=" px-4 px-sm-0">
+  <h4>
+    ジャンル
+    【 <%= @scenery.genre.genre_name if @scenery.genre.present? %> 】
+  </h4>
+  <% if @scenery.user == current_user %>
+    <%= link_to 'マイページへ', user_path(current_user.id) %>
+  <% else %>
+    <h4>
+      <%= link_to '投稿者へ', user_path(@user) %>
+    </h4>
+  <% end %>
+</div>
+<section class="projects-section" id="projects">
+  <div class="containers px-4 px-lg-5">
+    <div class="row gx-0 mb-4 mb-lg-5">
+      <div class="col-lg-6">
+        <%= image_tag @scenery.get_scenrery_image, class:"img-fluid mb-3 mb-lg-0" %>
+      </div>
+      <div class="project-text featured-text  w-50 	pl-4 pt-0 text-lg-left">
+        <h2><%= @scenery.name %>
+          <span id=<%= "favorite_buttons_" + @scenery.id.to_s %> >
+            <%= render "public/favorites/favorite", scenery: @scenery %><br>
+          </span>
+        </h2>
+        <h3><%= @scenery.introduction %></h3>
+        <h4>
+          <% if @scenery.user == current_user %>
+            <%= link_to '投稿を削除', scenery_path(@scenery), method: :delete, "data-confirm" => "本当に消しますか?" %>
+           |
+            <%= link_to '投稿を編集', edit_scenery_path(@scenery) %>
+          <% end %>
+        </h4>
+      </div>
+    </div>
+  </div>
+  <div class="containers px-4 px-lg-5">
+    <div class="public-scenery-comments-counter">
+      <%= render "public/scenery_comments/counter", scenery: @scenery %>
+    </div>
+<%= render "public/scenery_comments/form", scenery: @scenery, scenery_comment: @scenery_comment %>
+<div class="public-scenery-comments-index">
+  <%= render "public/scenery_comments/index", scenery: @scenery %>
+</div>
+
