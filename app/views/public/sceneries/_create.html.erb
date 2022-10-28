@@ -2,8 +2,8 @@
 <div  class="col-md-3">
   <div class="containers px-4 px-lg-5">
     <%= render "sidebar", genres: @genres %>
-    <% if user == current_user %>
-    <% else %>
+    <%# if user == current_user %>
+    <%# else %>
       <h2>User info</h2>
         <table class="table">
           <tbody>
@@ -35,7 +35,7 @@
           <%= f.collection_select :genre_id, Genre.all, :id, :genre_name, {include_blank: "---"}, class: "w-100 my-auto" %><br>
         </div>
         <a class="btn btn-flat"><span><%= f.submit "投 稿 す る ！", class:"btn btn-flat" %></span></a>
-      <% end %>
+      <%# end %>
     <% end %>
   </div>
 </div>
