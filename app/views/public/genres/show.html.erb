@@ -1,11 +1,6 @@
 <%= stylesheet_link_tag "sceneries", :media => "all" %>
-<div  class="col-md-3">
-  <div class="containers px-4 px-lg-5">
-    <%# ジャンル検索 %>
-    <%= render "public/sceneries/sidebar", genres: @genres %></br>
-  </div>
-</div>
 <h4 class="mt-5"><strong><%= @genre.genre_name %>一覧<span class="font"><span class="font">(全<%= @genreitems.count %>件)</span></strong></h4>
+<%= render "kaminari/genre",  genres: @genreitems %>
 
 <%# 検索一覧 %>
 <% @genreitems.each do |f| %>
