@@ -1,8 +1,11 @@
 <%= stylesheet_link_tag "sceneries", :media => "all" %>
 <div  class="col-md-3">
   <div class="containers px-4 px-lg-5">
+    <% if user_signed_in? && current_user.id == 1 %>
+    <% else %>
     <%# ジャンル検索 %>
       <%= render "sidebar", genres: @genres %>
+    <% end %>
     <%# ユーザー詳細 %>
     <% if user_signed_in? %>
       <h2>User info</h2>

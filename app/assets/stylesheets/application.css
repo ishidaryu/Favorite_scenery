@@ -25,3 +25,8 @@
     padding: 5px;
     width: 31%;
 }
+@media screen and (min-width:48px) {
+   #nav-drawer {
+     display:none;
+   }
+ }
