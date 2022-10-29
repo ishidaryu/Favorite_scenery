@@ -1,6 +1,38 @@
-<%= form_with model: @scenery, url: scenery_path(@scenery) do |f| %>
-  <%= f.text_field :name %>
-  <%= f.text_area :introduction %>
-  <%= f.collection_select :genre_id, Genre.all, :id, :genre_name, {include_blank: "---"}, class:"w-75" %>
-  <%= f.submit %>
+<!DOCTYPE html>
+<p id="notice"></p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+      <h2>投稿編集</h2>
+<% if @scenery.errors.any? %>
+  <%= @scenery.errors.count %>件の未記入がありました
+  <ul>
+    <% @scenery.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
 <% end %>
+<%= form_with model: @scenery, url: scenery_path(@scenery) do |f| %>
+      <tbody>
+        <tr>
+          <th>
+            <h5>タイトル
+            　<%= f.text_field :name %>
+            </h5>
+          </th>
+          <th>
+            <h5>説明
+            　<%= f.text_field :name %>
+            </h5>
+          </th>
+          <th>
+            <h5>ジャンル
+            　<%= f.collection_select :genre_id, Genre.all, :id, :genre_name, {include_blank: "---"}, class:"w-75" %>
+            </h5>
+          </th>
+          <%= f.submit '変更を保存', class:"btn btn-success" %>
+          <% end %>
+      </tbody>
+    </div>
+  </div>
+</div>

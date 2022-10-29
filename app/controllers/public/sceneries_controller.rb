@@ -3,7 +3,7 @@ class Public::SceneriesController < ApplicationController
 
   def index
     @scenery = Scenery.new
-    @sceneries = Scenery.all.page(params[:page]).per(15)
+    @sceneries = Scenery.all.page(params[:page]).per(20)
     @search = Scenery.ransack(params[:q])
     @scenerys = Scenery.find_by(id: params[:id])
     @genres = Genre.all
@@ -16,7 +16,7 @@ class Public::SceneriesController < ApplicationController
     if @scenery.save
     redirect_to user_path(current_user.id)
     else
-    @sceneries = Scenery.all.page(params[:page]).per(15)
+    @sceneries = Scenery.all.page(params[:page]).per(20)
     @genres = Genre.all
     @user = current_user
     render :index
