@@ -11,7 +11,7 @@
         <table class="table table-hover table-inverse">
           <%# each文より処理を軽くする %>
           <%= render partial: "public/sceneries/index", collection: @sceneries, as: 'sceneries' %>
-          <%#= render "kaminari/index",  sceneries: @sceneries %>
+          <%= render "kaminari/index",  sceneries: @sceneries %>
         </table>
       </div>
     </div>
