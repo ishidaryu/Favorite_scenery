@@ -14,7 +14,10 @@
               <th><%= current_user.name %></th>
             </tr>
 　          <%# フォロウ＆フォロワーの数 %>
-            <%= render "public/users/followings", user: @user %>
+　          <% if user_signed_in? && current_user.id == 1 %>
+            <% else %>
+              <%= render "public/users/followings", user: @user %>
+            <% end %>
           </tbody>
         </table>
 
