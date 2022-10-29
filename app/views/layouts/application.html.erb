@@ -30,19 +30,19 @@
         <% if admin_signed_in? %>
           <li>
             <%= link_to admin_genres_path, class:" nav-link text-light" do %>
-              <i class=""></i>ジャンルぺージ
+              ジャンルぺージ
             <% end %>
           </li>
 
           <li>
             <%= link_to admin_users_path, class:" nav-link text-light" do %>
-              <i class=""></i>ユーザー一覧
+              ユーザー一覧
             <% end %>
           </li>
 
           <li>
             <%= link_to destroy_admin_session_path, method: :delete, class:" nav-link text-light" do %>
-              <i class=""></i>ログアウト
+              ログアウト
             <% end %>
           </li>
 
@@ -50,13 +50,13 @@
 
           <li>
             <%= link_to root_path, class:" nav-link text-light" do %>
-              <i class="fa-solid fa-house"></i>TOPぺージ
+              TOPぺージ
             <% end %>
           </li>
 
           <li>
             <%= link_to user_path(current_user.id), class:" nav-link text-light" do %>
-              <i class=""></i>マイページ
+              マイページ
             <% end %>
           </li>
 
@@ -68,7 +68,7 @@
 
           <li>
             <%= link_to destroy_user_session_path, method: :delete, class:" nav-link text-light" do %>
-              <i class="fas fa-sign-out-alt"></i>Log out
+              Log out
             <% end %>
           </li>
 
@@ -88,26 +88,26 @@
 
             <li>
               <%= link_to root_path, class:" nav-link text-light" do %>
-                <i class="fa-solid fa-house"></i>TOPぺージ
+                TOPぺージ
               <% end %>
             </li>
 
 
           <li>
             <%= link_to new_user_registration_path, class:'nav-link text-light' do %>
-              <i class="fas fa-user-plus"></i>Sign up
+              Sign up
             <% end %>
           </li>
 
           <li>
             <%= link_to new_user_session_path, class:'nav-link text-light' do %>
-              <i class="fas fa-sign-in-alt"></i>Log in
+              Log in
             <% end %>
           </li>
 
           <li>
             <%= link_to users_guest_sign_in_path, method: :post, class:'nav-link text-light' do %>
-              <i class="fa-solid fa-users"></i>ゲストログイン
+              ゲストログイン
             <% end %>
           </li>
 

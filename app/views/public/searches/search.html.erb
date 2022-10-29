@@ -1,4 +1,4 @@
-<h2>Results index</h2>
+<h2>検索結果</h2>
 <table class="table table-hover table-inverse">
   <% if @range == "User" %>
     <tbody>
@@ -12,7 +12,8 @@
     <tbody>
       <% @sceneries.each do |f| %>
         <tr>
-          <td><%= image_tag f.get_scenrery_image %></td>
+          <td><%= link_to '投稿へ', scenery_path(f) %></td>
+          <td><%= image_tag f.get_scenrery_image,  style: "width: 130px; align-self: flex-start;" %></td>
           <td><%= f.name %></td>
           <td><%= f.introduction %></td>
         </tr>

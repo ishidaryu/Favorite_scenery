@@ -30,10 +30,9 @@
     <div class="public-scenery-comments-counter">
       <%= render "public/scenery_comments/counter", scenery: @scenery %>
     </div>
-
-
-
-<%= render "public/scenery_comments/form", scenery: @scenery, scenery_comment: @scenery_comment %>
-<div class="admin-scenery-comments-index">
-<%= render "admin/scenery_comments/index", scenery: @scenery %>
-</div>
+    <%# コメント機能 %>
+    <%= render "public/scenery_comments/form", scenery: @scenery, scenery_comment: @scenery_comment %>
+    <div class="admin-scenery-comments-index">
+    <%= render "admin/scenery_comments/index", scenery: @scenery %>
+  </div>
+</section>
