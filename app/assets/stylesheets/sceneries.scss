@@ -523,40 +523,23 @@ button.btn {
   vertical-align: middle;
   text-decoration: none;
   letter-spacing: 0.1em;
-  color: #fff;
+  color: 000;
   border-radius: 0.5rem;
 }
 
-a.btn-flat {
-  overflow: hidden;
-
-  color: #fff;
+a.btn-borders {
+  border: 2px solid #000;
   border-radius: 0;
-  background: #000;
+  background: #fff;
+  -webkit-box-shadow: 4px 4px 0 #000;
+  box-shadow: 4px 4px 0 #000;
 }
 
-a.btn-flat span {
-  position: relative;
+a.btn-borders:hover {
+  -webkit-box-shadow: -4px -4px 0 #000;
+  box-shadow: -4px -4px 0 #000;
 }
 
-a.btn-flat:before {
-  position: absolute;
-  top: 0;
-  left: 30px;
-  width: 150%;
-  height: 500%;
-  content: '';
-  -webkit-transition: all .5s ease-in-out;
-  transition: all .5s ease-in-out;
-  -webkit-transform: translateX(-98%) translateY(-70%) rotate(135deg);
-  transform: translateX(-98%) translateY(-70%) rotate(135deg);
-  background: #fff100;
-}
-
-a.btn-flat:hover:before {
-  -webkit-transform: translateX(-9%) translateY(-25%) rotate(135deg);
-  transform: translateX(-9%) translateY(-25%) rotate(135deg);
-}
 
 .box01 {
     display: flex;
@@ -578,7 +561,7 @@ a.btn-flat:hover:before {
     padding-right: 1.5rem !important;
     padding-left: 1.5rem !important;
 }
-.text-truncates {
+.text-truncate {
     /* overflow: hidden; */
     text-overflow: ellipsis;
     white-space: nowrap;
