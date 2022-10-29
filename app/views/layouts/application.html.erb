@@ -9,7 +9,7 @@
 
     <script src="https://kit.fontawesome.com/73f09fc4b1.js" crossorigin="anonymous"></script>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_pack_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
     <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
   </head>
@@ -75,13 +75,13 @@
 
           <li>
             <%= link_to favorites_user_path(current_user.id), class:" nav-link text-light" do %>
-              <i class="fas fa-sign-out-alt"></i>いいね一覧
+              いいね一覧
             <% end %>
           </li>
 
           <li>
             <%= link_to new_contact_path(user_id: current_user.id), class:" nav-link text-light" do %>
-              <i class="fas fa-sign-out-alt"></i>お問い合わせ
+              お問い合わせ
             <% end %>
           </li>
 
