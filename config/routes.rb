@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 }
 
   namespace :admin do
+  root to: "users#index"
   resources :genres, only: [:index, :create, :destroy, :edit, :update,]
   resources :sceneries, only: [:index, :create, :show, :destroy, :edit, :update] do
     resources :scenery_comments, only: [:create, :destroy]

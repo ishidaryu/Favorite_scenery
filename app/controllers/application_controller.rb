@@ -1,5 +1,17 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
+   before_action :authenticate_customer!, if: :public_url, except: [:top, :index]
+   before_action :authenticate_admin!, if: :admin_url
+
+  def admin_url
+    request.fullpath.include?("/admin")
+  end
+
+  def public_url
+     request.fullpath.include?("/public")
+  end
+
+
 
     def after_sign_in_path_for(resource)
         user_path(resource)
