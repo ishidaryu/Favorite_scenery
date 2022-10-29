@@ -31,7 +31,6 @@ end
   root to: 'homes#top'
   get 'homes/about'
   get "search" => "searches#search"
-
   resources :genres, only: [:show]
   post '/sceneries/create', to: 'sceneries#create'
   resources :sceneries, only: [:index, :create, :show, :destroy, :edit, :update] do

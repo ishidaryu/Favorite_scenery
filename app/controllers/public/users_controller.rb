@@ -1,5 +1,5 @@
 class Public::UsersController < ApplicationController
-  before_action :authenticate_user!
+
   before_action :ensure_correct_user, only: [:update, :edit]
 
   def show
@@ -10,9 +10,6 @@ class Public::UsersController < ApplicationController
   def followings
     user = User.find(params[:user_id])
     @users = user.followings
-  end
-
-  def edit
   end
 
   def favorites
