@@ -66,15 +66,18 @@
             <% end %>
           </li>
 
-          <li>
-            <%= link_to destroy_user_session_path, method: :delete, class:" nav-link text-light" do %>
-              Log out
-            <% end %>
-          </li>
-
+          <% if user_signed_in? && current_user.id == 1 %>
+          <% else %>
           <li>
             <%= link_to favorites_user_path(current_user.id), class:" nav-link text-light" do %>
               いいね一覧
+            <% end %>
+          </li>
+          <% end %>
+
+          <li>
+            <%= link_to destroy_user_session_path, method: :delete, class:" nav-link text-light" do %>
+              Log out
             <% end %>
           </li>
 
