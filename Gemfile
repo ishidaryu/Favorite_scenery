@@ -56,6 +56,8 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'devise'
 gem 'jquery-rails'
+gem 'gmaps4rails'
+gem 'geocoder'
 gem 'kaminari'
 gem 'ransack'
 gem 'rails-i18n'
