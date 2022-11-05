@@ -1,8 +1,10 @@
-<body id="page-top">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 mx-auto pt-4">
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "publics/shared/error_messages", resource: resource %>
+  <%= render "public/shared/error_messages", resource: resource %>
 
   <div class="field">
     <%= f.label :email %><br />
