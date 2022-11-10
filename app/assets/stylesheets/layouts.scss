@@ -1,0 +1,154 @@
+@media screen and (min-width:48px) {
+   #nav-drawer {
+     display:none;
+   }
+ }
+ header {
+   width: 100%;
+   background: #990000;
+ }
+
+ header .container-fluid{
+  padding: 0px;
+  font-family: 'Osaka',sans-serif;
+ }
+
+ .container{
+  padding: 20px;
+ }
+
+ .container-fluid{
+  padding: 20px;
+ }
+ h1{
+  font-family: 'Osaka',sans-serif;
+ }
+ h2{
+  font-family: 'Osaka',sans-serif;
+ }
+ h3{
+  font-family: 'Osaka',sans-serif;
+ }
+ h4{
+  font-family: 'Osaka',sans-serif;
+ }
+ h5{
+  font-family: 'Osaka',sans-serif;
+ }
+
+ .back{
+  margin-right: 20px;
+  font-size: 20px;
+  text-align: right;
+ }
+
+ .back a{
+  color: black;
+  text-decoration: underline;
+ }
+
+ .nav-item a{
+  color: white;
+  text-shadow: 2px 2px 2px black;
+  font-size: 20px;
+  margin-left: 10px;
+ }
+ .form-size{
+  width: 70%;
+ }
+ .form-size-2{
+  width: 100%;
+ }
+ .size {
+  font-size: 2em;
+  color: black;
+ }
+
+ main {
+   min-height: 500px;
+   background: #ffffe0;
+ }
+ /*手順削除ボタン*/
+ .danger{
+  margin-bottom: 20px;
+ }
+
+ .flash{
+  text-decoration: underline;
+ }
+
+ .flash2{
+  color: red;
+ }
+
+ table td {
+  word-break : break-all;
+ }
+ table th {
+  word-break : break-all;
+ }
+ .count a{
+  color: black;
+ }
+
+ .no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+ }
+ .form {
+  background: white;
+  padding: 10px;
+ }
+
+ .title-font{
+  font-family: 'Osaka',sans-serif;
+ }
+ .user-icon{
+  border-radius: 50%;
+  object-fit: cover;
+ }
+ .footer {
+  width: 100%;
+  height: 80px;
+  background: #990000;
+ }
+ footer p{
+ text-align: center;
+ color: white;
+ padding-top: 25px;
+ }
+ .contact-form{
+  color: white;
+  margin-left: 20px;
+  position: absolute;
+ }
+
+ .contact-form a{
+  color: white;
+  text-decoration: underline;
+ }
+
+ .field_with_errors {
+  display: inline;
+ }
+
+/*ページネーション自体のデザイン*/
+.pagination>li>a {
+border: none; /*枠線をなくす*/
+color: #696969; /*文字の色を変える*/
+}
+
+/* 表示しているページ番号のデザイン */
+.pagination>.active>a {
+background: #fff; /*背景の色を変える*/
+border-radius: 15px; /*角を丸くする*/
+}
+
+/*ホバー時のデザイン*/
+.pagination>li>a:hover {
+border-radius: 15px; /*角を丸くする*/
+}
+
+.pagination {
+justify-content: center;
+}

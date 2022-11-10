@@ -3,7 +3,7 @@ class Public::SearchesController < ApplicationController
 
   def search
     @range = params[:range]
-    if @range == "User"
+    if @range == "ユーザー名"
       @users = User.looks(params[:search], params[:word])
     else
       @sceneries = Scenery.looks(params[:search], params[:word])
