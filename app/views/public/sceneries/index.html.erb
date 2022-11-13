@@ -2,11 +2,6 @@
 <html class="fontawesome-i2svg-active fontawesome-i2svg-complete">
 <%= stylesheet_link_tag "sceneries", :media => "all" %>
 <p id="notice"></p>
-<%# エラーメッセージ %>
-<%= render "layouts/error_messages", scenery: @scenery %>
-<% if flash[:notice] %>
-  <p><%= flash[:notice] %></p>
-<% end %>
   <div class=" px-5 px-sm-0">
     <div class="row">
       <%# ユーザー詳細&投稿ページ %>
