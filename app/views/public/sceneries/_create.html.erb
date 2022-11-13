@@ -23,9 +23,13 @@
             <% end %>
           </tbody>
         </table>
-
       <%# 投稿 %>
       <h2 class="mt-3">投稿</h2>
+<%# エラーメッセージ %>
+<%= render "layouts/error_messages", scenery: @scenery %>
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>
       <%= form_with model: scenery, url: sceneries_path do |f| %>
         <div class="form-group">
           <p>投稿写真</p>

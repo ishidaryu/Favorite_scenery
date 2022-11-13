@@ -1,16 +1,24 @@
 <h2>検索結果</h2>
 <table class="table table-hover table-inverse">
-  <% if @range == "User" %>
+  <% if @range == "ユーザー名" %>
     <tbody>
-      <% @users.each do |user| %>
-        <tr>
-          <td><%= user.name %></td>
-        </tr>
+    <% if @users.size == 0 %>
+      <p>検索結果がありませんでした</p>
+    <% else %>
+      <% @users.each do |f| %>
+          <tr>
+            <td><%= f.name %></td>
+            <td><%= link_to "詳細", user_path(f) %></td>
+          </tr>
       <% end %>
+    <% end %>
     </tbody>
-  <% else %>
+  <% elsif %>
     <tbody>
-      <% @sceneries.each do |f| %>
+      <% if @sceneries.size == 0 %>
+        <p>検索結果がありませんでした</p>
+      <% else %>
+        <% @sceneries.each do |f| %>
         <tr>
           <td><%= link_to '投稿へ', scenery_path(f) %></td>
           <td><%= image_tag f.get_scenrery_image,  style: "width: 130px; align-self: flex-start;" %></td>
@@ -18,6 +26,9 @@
           <td><%= f.introduction %></td>
         </tr>
       <% end %>
-    </tbody>
+
+      <% end %>
+          </tbody>
+
   <% end %>
 </table>
