@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 <%= stylesheet_link_tag "sceneries", :media => "all" %>
 <h4 class="mt-5"><strong><%= @genre.genre_name %>一覧<span class="font"><span class="font">(全<%= @genreitems.count %>件)</span></strong></h4>
 <%= render "kaminari/genre",  genres: @genreitems %>
