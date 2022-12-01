@@ -1,4 +1,6 @@
-<%= form_with model: @genre, url: admin_genre_path(@genre) do |f| %>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+%= form_with model: @genre, url: admin_genre_path(@genre) do |f| %>
 <%= f.text_field :genre_name %>
 <%= f.submit %>
 <% end %>

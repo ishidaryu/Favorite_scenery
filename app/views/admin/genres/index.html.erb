@@ -1,5 +1,6 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 <%= render 'new', genre:@genre %>
-
 <% @genres.each do |f| %>
 <h5>
   <%= f.genre_name %>
